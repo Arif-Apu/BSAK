@@ -1,0 +1,23 @@
+    <!-- bottom begin -->
+    <div id="bottom_bot">
+        <div id="bottom">
+        <div id="b_col1">
+
+          </div>
+
+          	<div style="clear: both; height:20px;"></div>
+        </div>
+    </div>
+<!-- bottom end -->
+<!-- footer begins -->
+            <div id="footer">
+          		Copyright  2017. Designed by <a href="" title="">XYZ</a><!-- end --><br />
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="" title=""><abbr title="">XHTML</abbr></a> |
+
+    </div>
+        <!-- footer ends -->
+</div>
+
+</div>
+</body>
+</html>

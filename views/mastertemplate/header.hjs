@@ -1,0 +1,112 @@
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Bangladeshi Students Association</title>
+
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div id="bg_clouds">
+<div id="main">
+<!-- header begins -->
+<div id="header">
+
+	<div id="buttons">
+      <a href="/" class="but but_t"  title="" >Home</a>
+      <a href="/websocket"  class="but" title="">Go Online</a>
+      <a href="/schedule"  class="but" title="">Schedule</a>
+      <a href="/aboutus"  class="but" title="">About us</a>
+      <a href="/contactus" class="but" title="">Registration</a>
+      <a href="/contactform"  class="but" title="">Contact Us</a>
+      <a href="/employeesign" class="but" title="">Login</a>
+    </div>
+
+	<div id="logo">
+    	<a href="#"></a>
+      	<h2><a href="#" id="meta"></a></h2>
+    </div>
+
+</div>
+<!-- header ends -->
+<div class="top_top"></div>
+<div class="top">
+
+ <div id="wrapper">
+        <div id="slider-wrapper">
+            <div id="slider" class="nivoSlider">
+
+                <img src="images/twilight.jpg" width="954" height="200" alt="" />
+                <img src="images/mangrove.jpg" width="954" height="200" alt="" />
+                <img src="images/bd.jpg" width="954" height="200" alt="" />
+                <img src="images/royal1.jpg" width="954" height="200" alt="" />
+                <img src="images/rangamati.jpg" width="954" height="200" alt="" />
+                <img src="images/jaflong1.JPG" width="954" height="200" alt="" />
+                <img src="images/coxbazar.jpg" width="954" height="200" alt="" />
+                <img src="images/boatriver.jpg" width="954" height="200" alt="" />
+                <img src="images/waterlily.jpg" width="954" height="200" alt="" />
+                <img src="images/tea.jpg" width="954" height="200" alt="" />
+                <img src="images/guava.jpg" width="954" height="200" alt="" />
+
+            </div>
+        </div>
+
+</div>
+
+<script type="text/javascript" src="js/lib/jquery-1.4.3.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.nivo.slider.pack.js"></script>
+
+    <script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    </script>
+
+</div>
+<div class="top_bot"></div>
+<div style="height:17px"></div>
+
+{{#user.username}}
+  <nav class="navbar" style="background: #044411; border: 2px ;">
+  <div class="container-fluid" >
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Welcome to Bangladeshi Student Association</a>
+   <img src="images/bd.png" width="50px">
+    </div>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"> Help</a></li>
+
+      <li><a href="/logout">Log Out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{{/user.username}}
+
+{{#user.aEmail}}
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Welcome to Bangladeshi Student Association </a>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"> Help</a></li>
+
+      <li><a href="#">Sign Out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{{/user.aEmail}}

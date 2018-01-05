@@ -1,0 +1,76 @@
+
+.title{
+    text-align: center;
+    padding: 0px 0 20px;
+}
+.title h1{
+    margin: 0;
+    padding:0;
+    color: #006600;
+    text-transform: uppercase;
+    font-size: 22px;
+}
+
+.container{
+
+}
+.container .left{
+    float: left;
+    width: 40%;
+    height: 400px;
+    background: url("../images/bangladesh-flag.jpg");
+    background-size: cover;
+    box-sizing: border-box;
+}
+.container .right{
+    float: left;
+    width: 50%;
+    height: 400px;
+
+    box-sizing: border-box;
+}
+.formBox{
+    width: 80%;
+    padding: 60px 60px;
+    box-sizing: border-box;
+    height: 400px;
+    background: #efe9d1;
+}
+.formBox p{
+    margin: 0;
+    padding:0;
+    font-weight: bold;
+    color: #a6af13;
+}
+.formBox input{
+    width: 90%;
+    margin-bottom: 20px;
+}
+.formBox input[type="text"]
+.formBox input[type="Password"]{
+    border: none;
+    border-bottom: 5px solid #a6af13;
+    outline: none;
+    height: 40px;
+}
+.formBox input[type="text"]:focus
+.formBox input[type="Password"]:focus{
+    border-bottom: 3px solid #a6af13;
+}
+.formBox input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 250px;
+    color: #FFFFFF;
+    background: #262626;
+    cursor: pointer;
+}
+.formBox input[type="submit"]:hover{
+    background: #a6af13;
+}
+.formBox a{
+    color: #006600;
+    font-size: 14px;
+    font-weight: bold;
+}
