@@ -1,0 +1,114 @@
+{{> header}}
+
+
+
+ <div class="cont_top"></div>
+       			<div id="content">
+                	<div class="razd_lr">
+                    	<div id="right">
+                            <h1>Contact Address</h1>
+                            <div style="height: 15px;"></div>
+
+
+
+
+                           <div id = "map" ></diV>
+
+                         <script>
+                               function initMap() {
+                               var options = {
+                               zoom:10,
+                               center:{lat:54.3233, lng:10.1228},
+                             }
+
+                             // new map
+                              var map= new
+                              google.maps.Map(document.getElementById('map'), options);
+
+                              // add marker
+                              var marker = new google.maps.Marker({
+                              position:{lat:54.3325, lng:10.1810},
+                              map:map
+                              });
+
+                              var infowindow = new google.maps.InfoWindow({
+                              content:'<h1>FH Kiel</h1>'
+                              });
+
+                              marker.addListener('click', function(){
+                              infowindow.open(map, marker);
+                              });
+                             }
+                        </script>
+
+                        <script async defer
+                           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkMwxtVWNMvZ56y6gK0AE-8CPoyQEfbQ4&callback=initMap">
+                        </script> <br/>
+
+                            <div class="lh" style="padding-left: 20px;">
+                                Fachhochschule Kiel, Sokratespl. 1, <br />
+                                24149 Kiel , Germany<br />
+                                Phone:  1(234) 567 8910<br />
+                                Fax: 1(234) 567 8910<br />
+                                E-mail: BSAKiel@yahoo.com
+                            </div>
+                            <div class="razd_h"></div>
+                            <h1>Share with Others</h1>
+                            <div style="height: 15px;"></div>
+                            <ul>
+                                <li><img src="images/fu_i1.png" class=" fu_i" alt="" /><a href="#">Subscribe to Blog</a></li>
+                                <li><img src="images/fu_i2.png" class=" fu_i" alt="" /><a href="#">Be a fan on Facebook</a></li>
+                                <li><img src="images/fu_i3.png" class=" fu_i" alt="" /><a href="#">RSS Feed</a></li>
+                                <li><img src="images/fu_i4.png" class=" fu_i" alt="" /><a href="#">Follow us on Twitter</a></li>
+                            </ul>
+                        </div>
+                        <div id="left">
+
+				<div class="panel-heading"><h2>About us</h2></div>
+        <p> BSA or Bangladeshi Students Association in Kiel is a Non-profit volunteer society. We are the Bangladeshi
+         students living abroad. This group aims is to assist, support, and guidance by providing info to those prospective
+          Bangladeshi students and professionals who wish to come to EU countries for study and immigration.</p>
+
+
+        <h2>Welcome to Sailing City, Kiel</h2>
+        <p> Kiel is a port city on Germany’s Baltic Sea coast. In the old town, the rebuilt, medieval St. Nikolai Church hosts
+         classical concerts. Holstenstrasse and Dänische Strasse are streets lined with shops. Along the Kiel Fjord,
+          the Maritime Museum displays model ships and nautical instruments in a former fish auction hall. Cruise ships
+           dock at the Ostseekai Terminal in Germania Harbor.</p>
+
+        <h2>Our purposes</h2>
+        <p>
+            Features:
+            <ol>
+            <li> New students are allowed to make an E-registration when they are planning to come in Kiel, can
+            leave a message and become a member of BSA.</li>
+             <li>Through the Schedule planner students can update their free time and according to that time tasks
+            can be assigned to them. </li>
+             <li>Members can log in to the system and check tasks assigned to them and update it if necessary. </li>
+             <li>The members will get the latest news, meeting time and place about Association through a news feed. </li>
+             <li>This website will provide some events news such as the cultural program which can be
+            only for Bangladeshi students or can be for International Students as well. </li>
+             <li>Registration for Programmes hosted by the BSA can be done with the Web application. </li>
+             <li>It should be a common platform, so every member can share his/her thoughts through a group
+            chatting option and individual chatting option. </li>
+            </ol>
+         </p>
+
+      <script type="text/javascript">
+          var date = new Date();
+          var day = date.getDate();
+          var month = date.getMonth() + 1;
+          var year = date.getFullYear();
+          document.write("<b>Today's Date is :</b> "+day + "/" + month + "/" + year);
+      </script>
+
+		</div>
+
+                                <div style="clear: both"></div>
+                         	</div>
+                		</div>
+                        <div class="cont_bot"></div>
+            <!-- content ends -->
+            <div style="height:15px"></div>
+
+                {{>footer }}
