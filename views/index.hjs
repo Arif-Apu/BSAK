@@ -1,0 +1,127 @@
+       {{>header }}
+        
+
+        <!-- content begins -->
+        		<div class="cont_top"></div>
+				<div class="clear"></div>
+	<div id="content">
+
+	    <div class="line1">
+            <div class="col1">
+                <h2>Bangladeshi Student Association</h2>
+                <div class="wrapper pad_bot3">
+                    <div class="left marg_right1"><img src="images/flag.jpg" alt="" /></div>
+                        <p class="pad_bot1"><strong>Bangladesh Student Association in Kiel</strong>  is a small group of students/exstudents studying in Kiel, Germany.
+                                This is a small group of students/exstudents studying in Kiel, Germany..</p>
+                        <p>The objective of this group is to provide valuable informations about study, jobs, events ect for Bangladeshi students.
+                                The objective of this group is to provide valuable informations about study, jobs, events ect for Bangladeshi students.</p>
+                        <p>It should be mentioned here that this is a group for basically communicating with each other,so fun is allowed but personal attack or
+                            abusive post is strictly forbidden.It should be mentioned here that this is a group for basically communicating with each other,so fun
+                            is allowed but personal attack or abusive post is strictly forbidden.</p>
+						</div>
+						<h2>Schedule Management</h2>
+						<p class="pad_bot1"><strong>Schedule Management</strong>, for pickup and receive a new student. Schedule Management, for pickup and receive a new student.</p>
+						<p><strong>Event Management</strong>can be two types. (1) Private Event and (2) Public Event.</p>
+						<div class="wrapper line2">
+							<div class="list1 cols">
+                                <h1>Useful Resources</h1>
+                                <div style="height:10px"></div>
+                                <ul class="spis_bot">
+                                    <li><a href="#">Assign your schedule </a></li>
+                                    <li><a href="#">Assign Buddies</a></li>
+                                    <li><a href="#">Report Genaration</a></li>
+                                    <li><a href="#">Check Events </a></li>
+                                </ul>
+                                <br>
+
+                        <script type="text/javascript">
+                           var date = new Date();
+                           var day = date.getDate();
+                           var month = date.getMonth() + 1;
+                           var year = date.getFullYear();
+                           document.write("<b>Today's Date is :</b> "+day + "/" + month + "/" + year);
+                        </script>
+
+							</div>
+							<div class="list1 cols pad_left1">
+                                <div id="b_col2">
+                                    <h1>Contact Information</h1>
+                                    <div style="height:20px"></div>
+                                    <div style="padding-left:10px">
+                                        <div  class="box_us">
+                                            <div  class="box_us_l">
+                                                <img src="images/fish_us1.png" alt="" />
+                                            </div>
+                                            <div  class="box_us_r">
+                                                <b class="lh">Fachhochschule Kiel, Sokratespl. 1, 24149 Kiel , Germany</b>
+                                            </div>
+                                            <div style="clear: both; height:10px;"></div>
+                                        </div>
+                                        <div  class="box_us">
+                                            <div  class="box_us_l">
+                                                <img src="images/fish_us2.png" alt="" />
+                                            </div>
+                                            <div  class="box_us_r">
+                                                <b class="lh">Phone:  1(234) 567 8910<br />
+                                                    Fax: 1(234) 567 8910
+                                                </b>
+                                            </div>
+                                            <div style="clear: both; height:10px;"></div>
+                                        </div>
+                                        <div  class="box_us">
+                                            <div  class="box_us_l">
+                                                <img src="images/fish_us3.png" alt="" />
+                                            </div>
+                                            <div  class="box_us_r">
+                                                <b class="lh">E-mail: BSAKiel@yahoo.com</b>
+                                            </div>
+                                            <div style="clear: both; height:10px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+						  </div>
+						</div>
+					</div>
+
+					<div class="col2">
+
+
+						<h2>Recent News</h2>
+						<p class="font1">15.10.2017</p>
+						<p class="under">Dear All, You will be happy to know that we have got the room for our program on 18th November. Some paper works are remaining
+                            then we will get the final booking letter from the authority. So we can start our preparation keeping the date in mind. Thanks.</p>
+                        <p class="font1">10.10.2017</p>
+                        <p class="under">Dear members, we have a meeting on 11.10.2017. Bangladeshi Student Association Kiel requests you all to keep a tiny portion of time for
+                            today's meeting from your busy schedule. We need your help to host a successful event that we are planning for. A successful event to brand our country
+                            in International community is not only our communal success, it's also your individual achievement.</p>
+                        <p class="font1">27.09.2017</p>
+                        <p class="under"><strong>Welcome freshers</strong> The President of BSA congratulates you all on behalf of Bangladeshi Student's Association in Kiel
+                            for succeeding the hectic journey, which started prior to your university application and ended up with your enrollment in university and wish
+                            we all will stay together in solidarity within your stay in Kiel. Get ready to meet other fellow Bangladeshi student members and have a nice
+                            time in Kiel.</p>
+
+                        <h1>Share with Others</h1>
+                        <div style="height:15px"></div>
+                        <ul>
+                            <li><img src="images/fu_i1.png" class=" fu_i" alt="" /><a href="#">Subscribe to Blog</a></li>
+                            <li><img src="images/fu_i2.png" class=" fu_i" alt="" /><a href="#">Be a fan on Facebook</a></li>
+                            <li><img src="images/fu_i3.png" class=" fu_i" alt="" /><a href="#">RSS Feed</a></li>
+                            <li><img src="images/fu_i4.png" class=" fu_i" alt="" /><a href="#">Follow us on Twitter</a></li>
+                        </ul>
+
+
+                    </div>
+				</div>
+
+        <div class="clear"></div>
+
+	</div>
+    <div class="clear"></div>
+                <div class="cont_bot"></div>
+    <!-- content ends -->
+
+	
+	<div class="clear"></div>
+    <div style="height:15px"></div>
+	
+        {{>footer }}
