@@ -43,6 +43,14 @@ E-mail: bd.stu.association.kiel@gmail.com
 </ul>
 </div>
 <div id="left">
+
+                <!-- message success confirmation -->
+                 {{#messages.success}}
+                <div class="alert alert-success">
+                  {{ messages.success }}
+                </div>
+                {{/messages.success}}
+ 
     <h1>Contact Us</h1>
 <div style="height: 15px;"></div>
     <img src="images/flag1.jpg" class="img_l" alt="" /><p><b>Become a member of Bangladeshi Students Association kiel. </b><br />
