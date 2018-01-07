@@ -1,0 +1,139 @@
+       {{>header }}
+        
+
+       <div class="cont_top"></div>
+       			<div id="content">
+                	<div class="razd_lr">
+                    	<div id="right">
+                            <h1>Contact Address</h1>
+                            <div style="height: 15px;"></div> 
+                            <b>Contact Address.</b><br />
+
+                            <img src="images/fhkiel.jpg" style="padding: 10px 0px 10px 0px" alt="" />
+
+                           <script>
+                               function myMap() {
+                            var mapOptions = {
+                            center: new google.maps.LatLng(51.5, -0.12),
+                            zoom: 10,
+                            mapTypeId: google.maps.MapTypeId.HYBRID
+                            }
+                            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                            }
+                           </script>
+
+                            <script src="https://www.google.de/maps/place/Fachhochschule+Kiel/@54.3325836,10.1781438,16.48z/data=!4m5!3m4!1s0x41620151589bf8cb:0x67eb759431c88232!8m2!3d54.3325316!4d10.1809815">
+                            </script>
+
+                            <div class="lh" style="padding-left: 20px;">
+                                Fachhochschule Kiel, Sokratespl. 1, <br />
+                                24149 Kiel , Germany<br />
+                                Phone:  1(234) 567 8910<br />
+                                Fax: 1(234) 567 8910<br />
+                                E-mail: bd.stu.association.kiel@gmail.com
+                            </div>
+                            <div class="razd_h"></div>
+                            <h1>Share with Others</h1>
+                            <div style="height: 15px;"></div>
+                            <ul>
+                                <li><img src="images/fu_i1.png" class=" fu_i" alt="" /><a href="#">Subscribe to Blog</a></li>
+                                <li><img src="images/fu_i2.png" class=" fu_i" alt="" /><a href="#">Be a fan on Facebook</a></li>
+                                <li><img src="images/fu_i3.png" class=" fu_i" alt="" /><a href="#">RSS Feed</a></li>
+                                <li><img src="images/fu_i4.png" class=" fu_i" alt="" /><a href="#">Follow us on Twitter</a></li>
+                            </ul>
+                        </div>
+                        <div id="left">
+
+
+                             <div class ="panel-heading"><h1>Create your account</h1>
+                             <h4> Only enrolled Bangladeshi students with any of the Universities of Kiel are entitled to register </h4>
+                                   </div>
+                                        {{#messages.success}}
+                                        <div class="alert alert-success">
+                                          {{ messages.success }}
+                                        </div>
+                                        {{/messages.success}}
+                                        {{#messages.errors}}
+                                                <div class="alert alert-danger">
+                                                    {{ msg }}
+                                                </div>
+                                        {{/messages.errors}}
+                                        <form action="employeeRegistration" method="post">
+                                            <div class="form-group">
+                                                <label for="exampleInputUsername">Username<span class="help-inline red">*</span></label>
+                                                <input type="text" name="username" required class="form-control" id="exampleInputUsername" placeholder="Username">
+                                                <span class="help-inline red">{{ messages.usernameExist}}</span>
+                                            </div>
+                                             <div class="form-group">
+                                                <label for="exampleInputPW">Password<span class="help-inline red">*</span></label>
+                                                <input type="password" name="password" required class="form-control" id="exampleInputPW" placeholder="Password">
+                                                <p class="help-block">Use at least 8 to 12 characters.</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputRPW">Retype Password<span class="help-inline red">*</span></label>
+                                                <input type="password"  name="rePassword" required class="form-control" id="exampleInputRPW" placeholder="Retype Password">
+                                            </div>
+                                              <div class="form-group">
+                                                <label for="exampleInputFirstName">First Name<span class="help-inline red">*</span></label>
+                                                <input type="text" name="fname" required class="form-control" id="exampleInputFirstName" placeholder="First Name" name="fName">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputName">Last Name<span class="help-inline red">*</span></label>
+                                                <input type="text" name="lname" required class="form-control" id="exampleInputName" placeholder="Last Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Gender<span class="help-inline red">*</span></label>
+                                                <select class="form-control" name="gender" required>
+                                                    <option>Select</option>
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail">Email<span class="help-inline red">*</span></label>
+                                                <input type="Email" name="email" required class="form-control" id="exampleInputEmail" placeholder="Email">
+                                                <span class="help-inline red">{{ messages.userEmail }}</span>
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                <label for="exampleInputMobile">Mobile<span class="help-inline red">*</span></label>
+                                                <input type="text" name="mobile" required class="form-control" id="exampleInputMobile" placeholder="Mobile">
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label>Category<span class="help-inline red">*</span></label>
+                                                <select class="form-control" id="sel1" name="industryType" required>
+                                                <option value="1">Student</option>
+                                                <option value="2">Family</option>
+
+                                                </select>
+
+                                            </div>
+
+                                           <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="confirmation" value="confirmed" required >I agree to the BSA Kiel Terms of use.<span class="help-inline red">*</span>
+                                                </label>
+                                            </div>
+                                    <button type="submit" class="btn btn-default">Create Account</button>
+
+
+
+                                        </form>
+                            
+                        </div>
+                        
+                        <div style="clear: both"></div>
+                 	</div>
+        		</div>
+                <div class="cont_bot"></div>
+    <!-- content ends --> 
+    <div style="height:15px"></div>
+	
+        {{>footer }}
