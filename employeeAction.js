@@ -4,7 +4,7 @@ var db = require('../db');
 var employeeAction = require('../db/employeeAction');
 
 
-//Searching the Employee name
+//Searching the member name
 
 exports.findEmployeeName = function(req, res){
 
@@ -53,7 +53,7 @@ db.query(queryName,function(err, result) {
 };
 
 
-//Registration an employee
+//Registration an user
 
 exports.addEmployee = function(req, res){
 
@@ -85,7 +85,7 @@ exports.addEmployee = function(req, res){
 
 
 
-// Getting the Employee account details 
+// Getting the user account details 
 
 
 exports.viewresume = function(req, res, userId){
@@ -134,6 +134,32 @@ exports.findByUsername = function(username, cb) {
         });
   });
     };
+
+// Submitting contactUs/contactform form details
+
+exports.addContactUsForm = function(req, res){
+
+    usr = req.body;
+    console.log(usr);
+    var details = {
+        firstname: usr.firstname,
+        lastname: usr.lastname,
+        email: usr.email,
+        subject: usr.subject,
+        message: usr.message
+    };
+    db.query('INSERT into  `contactus` SET ?', details, function (err, result) {
+        if (err)
+            throw err;
+        else{
+            console.log(' The value inserted in database. ');
+            req.flash('success', 'We received your feedback, we will reply as soon as possible');
+            res.redirect('/contactform');
+        }
+    });
+
+};
+
 
 //Finding by the userId
 
