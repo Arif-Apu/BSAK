@@ -1,0 +1,115 @@
+{{> header}}
+
+<style>
+.table{margin-bottom:0px !important;}
+</style>
+<script>
+	$(document).ready(function(){
+
+		   function getUser(){
+				$.ajax({
+				url: "/getAllUserList",
+				type: "GET",
+				contentType: "application/json",
+				success: function (data) {
+                                            $.each(data, function(key,value) { 
+						console.log(value);
+						 $('#resPerson')
+							 .append($("<option></option>")
+										.attr("value",value.username)
+										.text(value.fname)); 
+                                            });
+                                        }
+                                })
+		   };
+		   getUser();
+		   
+		});
+		function edit(id){
+                                var parameters = { search: id };
+                                $.get( '/getSingleSchedule',parameters, function(data) {
+                                       console.log(data);
+                                        $('#fromDate').val(data.start);
+                                        $('#toDate').val(data.end);
+                                        $('#resPerson').val(data.person);
+                                        $('#hiddenId').val(data.id);
+                                        $('#add').hide();
+                                        $('#update').show();
+                                        $('#reset').show();
+                                     });
+			}
+                function updateSingle(){
+                                $("form").submit(function(e){
+                                            e.preventDefault();
+                                        });
+                                var parameters = { formDate: $('#fromDate').val(),
+                                                   toDate: $('#toDate').val(),
+                                                   rePerson: $('#resPerson').val(),
+                                                   id: $('#hiddenId').val() };
+                                $.get( '/postSingleSchedule',parameters, function(data) {
+                                       console.log(data);
+                                       location.reload();
+                                     });
+			}
+                function resetSingle(){
+                                $("form").submit(function(e){
+                                    e.preventDefault();
+                                });
+                                location.reload();
+			}
+</script>
+<div class="cont_top"></div>
+       			<div id="content">
+
+                	<div class="razd_lr" style="width:60%;">
+                            {{#user.username}}
+						<form id="actionpostScheduling" action="/postscheduling" method="post">
+						  <div class="form-group">
+							<label for="fromDate">From</label>
+							<input type="date" class="form-control" id="fromDate" required name="fromDate" placeholder="Enter from date">
+						  </div>
+						  <div class="form-group">
+							<label for="fromDate">To</label>
+							<input type="date" class="form-control" id="toDate" required name="toDate" placeholder="Enter until date">
+						  </div>
+						  <div class="form-group">
+								<label for="resPerson">Responsible Person</label>
+								<select class="form-control" name="resPerson" id="resPerson">
+								</select>
+							</div>
+                                                        <input type="hidden" id="hiddenId" name="hiddenId">
+						  <button type="submit" id="add" class="btn btn-primary">Submit</button>
+                                                  <button id="update" class="btn btn-primary" onclick="updateSingle()" style="display:none;">Update</button>
+                                                  <button id="reset" class="btn btn-primary" onclick="resetSingle()" style="display:none;">Reset</button>
+						</form>
+                            {{/user.username}}
+                    	
+                    </div>
+					<table class="table">
+					  <thead>
+						<tr>
+						  <th scope="col">#</th>
+						  <th scope="col">Start Date</th>
+						  <th scope="col">End Date</th>
+						  <th scope="col">Available Person</th>
+						</tr>
+					  </thead>
+					  <tbody>
+					  {{#result}}
+						<tr>
+						  <th scope="row">{{id}}</th>
+						  <td>{{start}}</td>
+						  <td>{{end}}</td>
+						  <td>{{person}}</td>
+						  {{#user.username}}<td><button class="btn btn-default" onclick="edit({{id}})">Edit</button></td>{{/user.username}}
+						</tr>
+					   {{/result}}
+					  </tbody>
+					</table>
+                </div>
+<div class="cont_bot"></div>
+<!-- content ends -->
+<div style="height:15px"></div>
+
+
+         {{>footer }}
