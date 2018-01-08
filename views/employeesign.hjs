@@ -1,0 +1,80 @@
+{{> header}}
+
+<div class="cont_top"></div>
+       			<div id="content">
+                	<div class="razd_lr">
+                    	<div id="right">
+                            <h1>Contact Address</h1>
+                            <div style="height: 15px;"></div>
+                            <b>Contact Address.</b><br />
+
+                            <img src="images/fhkiel.jpg" style="padding: 10px 0px 10px 0px" alt="" />
+
+                           <script>
+                               function myMap() {
+                            var mapOptions = {
+                            center: new google.maps.LatLng(51.5, -0.12),
+                            zoom: 10,
+                            mapTypeId: google.maps.MapTypeId.HYBRID
+                            }
+                            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                            }
+                           </script>
+
+                            <script src="https://www.google.de/maps/place/Fachhochschule+Kiel/@54.3325836,10.1781438,16.48z/data=!4m5!3m4!1s0x41620151589bf8cb:0x67eb759431c88232!8m2!3d54.3325316!4d10.1809815">
+                            </script>
+
+                            <div class="lh" style="padding-left: 20px;">
+                                Fachhochschule Kiel, Sokratespl. 1, <br />
+                                24149 Kiel , Germany<br />
+                                Phone:  1(234) 567 8910<br />
+                                Fax: 1(234) 567 8910<br />
+                                E-mail: BSAKiel@yahoo.com
+                            </div>
+                            <div class="razd_h"></div>
+                            <h1>Share with Others</h1>
+                            <div style="height: 15px;"></div>
+                            <ul>
+                                <li><img src="images/fu_i1.png" class=" fu_i" alt="" /><a href="#">Subscribe to Blog</a></li>
+                                <li><img src="images/fu_i2.png" class=" fu_i" alt="" /><a href="#">Be a fan on Facebook</a></li>
+                                <li><img src="images/fu_i3.png" class=" fu_i" alt="" /><a href="#">RSS Feed</a></li>
+                                <li><img src="images/fu_i4.png" class=" fu_i" alt="" /><a href="#">Follow us on Twitter</a></li>
+                            </ul>
+                        </div>
+                        <div id="left">
+
+
+<h3>Job seeker Login</h3>
+<form class="form-horizontal" action="employeesign" method="post" style="margin:30px 0px;">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Username</label>
+    <div class="col-sm-7">
+      <input type="text" class="form-control" name="username" id="inputEmail3" placeholder="User name" required>
+      <span class="help-inline red">{{ messages.username}}</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-7">
+      <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password" required>
+      <span class="help-inline red">{{ messages.password}}</span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Sign in</button>
+    </div>
+  </div>
+</form>
+
+  </div>
+
+                        <div style="clear: both"></div>
+                 	</div>
+        		</div>
+                <div class="cont_bot"></div>
+    <!-- content ends -->
+    <div style="height:15px"></div>
+
+        {{>footer }}
