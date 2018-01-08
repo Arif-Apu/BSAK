@@ -24,12 +24,6 @@ var employeeAction = require('./db/employeeAction');
 var flash = require('express-flash');
 
 // Configure the local strategy for use by Passport.
-//
-// The local strategy require a `verify` function which receives the credentials
-// (`username` and `password`) submitted by the user.  The function must verify
-// that the password is correct and then invoke callback `cb` with a user object, which
-// will be set at `req.user` in route handlers after authentication.
-
 passport.use('EmployeeSignIn-local',new LocalStrategy({
   usernameField: 'username',
   passwordField: 'password',
@@ -65,12 +59,6 @@ passport.use('EmployerSignIn-local',new LocalStrategy({
     }));
 
 // Configure Passport authenticated session persistence.
-//
-// In order to restore authentication state across HTTP requests, Passport needs
-// to serialize users into and deserialize users out of the session.  The
-// typical implementation of this is as simple as supplying the user ID when
-// serializing, and querying the user record by ID from the database when
-// deserializing.
 passport.serializeUser(function(user, cb) {
   cb(null, user);
 });
@@ -100,8 +88,6 @@ app.set('view engine', 'hjs');
 
 // Use application-level middleware for common functionality, including
 // logging, parsing, and session handling.
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(expressValidator());
@@ -120,7 +106,6 @@ app.use(passport.session());
 
 
 //Getting the index page
-
 app.get('/', function(req, res, next) {
     res.render('index',
     { 
@@ -129,11 +114,7 @@ app.get('/', function(req, res, next) {
         });
 });
 
-
-
-
 //Employer registration
-
 app.post('/employerRegistration', function(req, res, next) {
 
     req.checkBody('password', 'Password is too short. Minimum size is 8.').notEmpty().isLength({min:8});
@@ -157,21 +138,7 @@ app.post('/employerRegistration', function(req, res, next) {
 
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Employee Registration page showing
-
 app.get('/contactus', function(req, res, next) {
     res.render('contactus',
     { 
@@ -180,7 +147,6 @@ app.get('/contactus', function(req, res, next) {
 });
 
 // Employee Registration verification and post
-
 app.post('/employeeRegistration', function(req, res, next) {
 
     req.checkBody('password', 'Password is too short. Minimum size is 8.').notEmpty().isLength({min:8});
@@ -200,12 +166,10 @@ app.post('/employeeRegistration', function(req, res, next) {
     else
     {
       employeeAction.findEmployeeName(req, res);
-      // employeeAction.findEmployeeEmail(req, res);
     }
 });
 
 //Employee signin page 
-
 app.get('/employeesign', function(req, res, next) {
     res.render('employeesign',
     { 
@@ -214,7 +178,6 @@ app.get('/employeesign', function(req, res, next) {
 });
 
 //Employee authentication check
-
 app.post('/employeesign',
     passport.authenticate('EmployeeSignIn-local',{ 
       failureRedirect: '/employeesign' ,
@@ -223,16 +186,7 @@ app.post('/employeesign',
     })
 );
 
-
-
-
-
-
-
-
-
 //Checking Employee authentication
-
 function isEmployeeAuthenticated(req, res, next) {
     if (req.user.username)
         return next();
@@ -240,25 +194,60 @@ function isEmployeeAuthenticated(req, res, next) {
 }
 
 //Logging out 
-
 app.get('/logout', function(req, res){
   console.log(req.user);
   req.logout();
   res.redirect('/');
 });
 
+//showing websocket/socket.io page
+app.get('/websocket', isMemberAuthenticated, function(req, res){
+    res.render('websocket',
+        {
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+            user: req.user
+        });
+});
 
+// Configuring the websocket
+var io = require('socket.io').listen(3080);
+var userSocket = [];
+var memberSocket = [];
+var connections = [];
 
+//Showing who are connected
+io.on('connection', function(socket){
 
+    console.log('coming here');
+    connections.push(socket);
+    console.log('connected: %s ',connections.length);
 
+ socket.on('disconnect',function(socket){
+        memberSocket.splice(memberSocket.indexOf(socket),1);
+        updateUsernames();
+        connections.splice(connections.indexOf(socket),1);
+        console.log('Disconnected:%s connected',connections.length);
+    });
 
+    //Sending the username who are chatting
+    socket.on('username',function(data,callback){
+        console.log('username is:' +data);
+        // callback(true);
+        socket.memberSocket = data.username;
+        memberSocket.push(socket.memberSocket);
+        updateUsernames();
+    });
+    function updateUsernames(){
+        io.emit('get users', memberSocket);
+    }
 
+    socket.on('chat message', function(data){
+        io.emit('chat message', {msg : data, username: socket.memberSocket});
+    });
 
-
-
+});
 
 //Showing about us page
-
 app.get('/aboutus', function(req, res, next) {
     res.render('aboutus',
     { 
@@ -267,8 +256,7 @@ app.get('/aboutus', function(req, res, next) {
         });
 });
 
-//Showing contactUs page 
-
+//Showing contactUs/Registration page 
 app.get('/contactus', function(req, res, next) {
     res.render('contactus',
     { 
@@ -276,12 +264,6 @@ app.get('/contactus', function(req, res, next) {
             user : req.user
         });
 });
-
-
-
-
-
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
