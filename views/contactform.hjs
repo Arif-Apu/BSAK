@@ -1,0 +1,90 @@
+{{>header }}
+
+
+<div class="cont_top"></div>
+    <div id="content">
+<div class="razd_lr">
+<div id="right">
+    <h1>Contact Address</h1>
+<div style="height: 15px;"></div>
+    <b>Contact Address.</b><br />
+
+<img src="images/fhkiel.jpg" style="padding: 10px 0px 10px 0px" alt="" />
+
+    <script>
+        function myMap() {
+            var mapOptions = {
+                center: new google.maps.LatLng(51.5, -0.12),
+                zoom: 10,
+                mapTypeId: google.maps.MapTypeId.HYBRID
+            }
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        }
+    </script>
+
+    <script src="https://www.google.de/maps/place/Fachhochschule+Kiel/@54.3325836,10.1781438,16.48z/data=!4m5!3m4!1s0x41620151589bf8cb:0x67eb759431c88232!8m2!3d54.3325316!4d10.1809815">
+    </script>
+
+    <div class="lh" style="padding-left: 20px;">
+    Fachhochschule Kiel, Sokratespl. 1, <br />
+24149 Kiel , Germany<br />
+Phone:  1(234) 567 8910<br />
+Fax: 1(234) 567 8910<br />
+E-mail: bd.stu.association.kiel@gmail.com
+</div>
+<div class="razd_h"></div>
+    <h1>Share with Others</h1>
+<div style="height: 15px;"></div>
+<ul>
+<li><img src="images/fu_i1.png" class=" fu_i" alt="" /><a href="#">Subscribe to Blog</a></li>
+<li><img src="images/fu_i2.png" class=" fu_i" alt="" /><a href="#">Be a fan on Facebook</a></li>
+<li><img src="images/fu_i3.png" class=" fu_i" alt="" /><a href="#">RSS Feed</a></li>
+<li><img src="images/fu_i4.png" class=" fu_i" alt="" /><a href="#">Follow us on Twitter</a></li>
+</ul>
+</div>
+<div id="left">
+                 <!-- message success confirmation -->
+                 {{#messages.success}}
+                <div class="alert alert-success">
+                  {{ messages.success }}
+                </div>
+                {{/messages.success}}
+    <h1>Contact Us</h1>
+<div style="height: 15px;"></div>
+    <img src="images/flag1.jpg" class="img_l" alt="" /><p><b>Become a member of Bangladeshi Students Association kiel. </b><br />
+Bangladesh Student Association in Kiel is a small group of students/ex-students studying in Kiel, Germany. This is a small group of                                        students/exstudents studying in Kiel, Germany.</p>
+<p>The objective of this group is to provide valuable informations about study, jobs, events ect for Bangladeshi students.
+    The objective of this group is to provide valuable informations about study, jobs, events ect for Bangladeshi students.</p>
+<p>It should be mentioned here that this is a group for basically communicating with each other,so fun is allowed but personal attack or
+abusive post is strictly forbidden.It should be mentioned here that this is a group for basically communicating with each other,so fun
+is allowed but personal attack or abusive post is strictly forbidden.</p>
+
+<div style="clear: both"></div>
+    <div class="razd_h"></div>
+If you are planning to arrive in Kiel and seeking for further information please fill up the query fields below
+and we will get back to you soon asap!
+<div style="height:20px"></div>
+    <form action="contactform" method="post">
+<div style="height:30px;"><input class="input_txt2" placeholder="Last Name" name="firstname" type="text" /></div><div style="height:10px"></div>
+<div style="height:30px;"><input class="input_txt2" placeholder="First Name" name="lastname" type="text" /></div><div style="height:10px"></div>
+<div style="height:30px;"><input class="input_txt2" placeholder="E-mail" name="email" type="text" /></div><div style="height:10px"></div>
+<div style="height:30px;"><input class="input_txt2" placeholder="Subject" name="subject" type="text" /></div><div style="height:10px"></div>
+<div><textarea class="text_area2" cols="32" rows="3" name="message" placeholder = "Message"></textarea></div>
+<div style="height:10px;"></div>
+    <div style="height:28px;">
+<input class="submit2" name="send" type="submit" value="Send" />
+<input class="submit2" name="reset" type="submit" value="Reset" />
+    </div>
+    <div style="height:10px;"></div>
+    </form>
+
+    </div>
+
+    <div style="clear: both"></div>
+    </div>
+    </div>
+    <div class="cont_bot"></div>
+    <!-- content ends -->
+    <div style="height:15px"></div>
+
+{{>footer }}
