@@ -67,7 +67,7 @@ exports.addEmployee = function(req, res){
         gender: usr.gender,
         email: usr.email,
         mobile: usr.mobile,
-        industryType: usr.industryType,
+        category: usr.category,
         confirmation: usr.confirmation
     };
     db.query('INSERT into  `employee` SET ?', details, function (err, result) {
